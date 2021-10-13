@@ -29,6 +29,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BuiltInInterfaces", "BuiltI
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LooselyCoupled", "LooselyCoupled\LooselyCoupled.csproj", "{BD0D5F17-BDDF-4E57-844D-67F461BD041C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Delegation", "Delegation\Delegation.csproj", "{151C7ECF-61DD-4566-8F7A-840FE1A54ABB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{BD0D5F17-BDDF-4E57-844D-67F461BD041C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BD0D5F17-BDDF-4E57-844D-67F461BD041C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD0D5F17-BDDF-4E57-844D-67F461BD041C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{151C7ECF-61DD-4566-8F7A-840FE1A54ABB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{151C7ECF-61DD-4566-8F7A-840FE1A54ABB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{151C7ECF-61DD-4566-8F7A-840FE1A54ABB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{151C7ECF-61DD-4566-8F7A-840FE1A54ABB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -77,6 +83,7 @@ Global
 		{3EBDBEF2-638A-4BBA-B99B-8D030688FE8D} = {CF68AA28-B00D-47A3-BCC7-5935B0C05965}
 		{0C025087-A672-44E9-B19A-CEEAC340A7E2} = {3EBDBEF2-638A-4BBA-B99B-8D030688FE8D}
 		{BD0D5F17-BDDF-4E57-844D-67F461BD041C} = {3EBDBEF2-638A-4BBA-B99B-8D030688FE8D}
+		{151C7ECF-61DD-4566-8F7A-840FE1A54ABB} = {3EBDBEF2-638A-4BBA-B99B-8D030688FE8D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {13B29E22-DA25-4E78-8B0F-01ACE633B1C2}
