@@ -13,6 +13,11 @@ namespace BuiltInInterfaces
             classRoom.AddStudent(new Student { Id = 4, Age = 24, Name = "Faruk Ipek" });
 
             classRoom.SortStudents();
+
+            foreach (var student in classRoom)
+            {
+                Console.WriteLine($"{ student.Name } { student.Age }");
+            }
         }
     }
 }
