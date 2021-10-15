@@ -23,7 +23,7 @@ namespace Decorator
             GeographicDetailsMap geographicDetailsMap = new GeographicDetailsMap(busStopOnMap);
 
             geographicDetailsMap.ShowDetailsOnMap();
-            Console.ReadLine();
+            //Console.ReadLine();
         }
     }
 
