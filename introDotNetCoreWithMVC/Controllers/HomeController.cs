@@ -8,14 +8,18 @@ namespace introDotNetCoreWithMVC.Controllers
 {
     public class HomeController : Controller
     {
-        //public IActionResult Index()
-        //{
-        //    return View();
-        //}
-
-        public string Index()
+        public IActionResult Index()
         {
-            return "Burasi Home/Index tir.";
+            ViewBag.Name = "SeydaNur";
+
+            //return BadRequest();
+            //return Ok();
+            return View();
         }
+
+        //public string Index()
+        //{
+        //    return "Burasi Home/Index tir.";
+        //}
     }
 }
