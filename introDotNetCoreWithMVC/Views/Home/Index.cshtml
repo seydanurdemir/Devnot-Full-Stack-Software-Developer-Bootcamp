@@ -12,5 +12,23 @@
 </head>
 <body>
     <p>Merhaba @ViewBag.Name</p>
+
+    @if (ViewBag.IsRedPill)
+            {
+                <p>Kirmizi hapi tercih ettiniz ...</p>
+    }
+    else
+    {
+        <p>Mavi hapi tercih ettiniz ...</p>
+    }
+
+    <ul>
+        @foreach (var item in ViewBag.Products)
+        {
+            <li>
+                @item
+            </li>
+        }
+    </ul>
 </body>
 </html>

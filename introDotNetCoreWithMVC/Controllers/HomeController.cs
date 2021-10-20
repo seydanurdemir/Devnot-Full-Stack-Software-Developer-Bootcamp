@@ -11,6 +11,9 @@ namespace introDotNetCoreWithMVC.Controllers
         public IActionResult Index()
         {
             ViewBag.Name = "SeydaNur";
+            ViewBag.IsRedPill = true;
+
+            ViewBag.Products = new string[] { "Soda", "Cola", "Ayran", "Kahve" };
 
             //return BadRequest();
             //return Ok();
