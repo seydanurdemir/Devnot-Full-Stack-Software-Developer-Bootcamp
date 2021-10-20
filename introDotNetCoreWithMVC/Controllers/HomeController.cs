@@ -1,4 +1,5 @@
 ﻿using introDotNetCoreWithMVC.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -26,6 +27,9 @@ namespace introDotNetCoreWithMVC.Controllers
         //    return "Burasi Home/Index tir.";
         //}
 
+        //Controller da olusan bi verinin View e gonderilmesi
+        //Koleksiyonlar 1.Model 2.ViewBack ViewData 4.TempData
+
         public IActionResult useModel()
         {
             List<Drink> drinks = new List<Drink>
@@ -37,6 +41,20 @@ namespace introDotNetCoreWithMVC.Controllers
             };
 
             return View(drinks);
+        }
+
+        public IActionResult UserRegister()
+        {
+
+            return View();
+        }
+
+        [HttpPost]
+
+        public IActionResult UserRegister(User user, IFormCollection formCollection)
+        {
+
+            return View();
         }
     }
 }

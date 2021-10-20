@@ -1,0 +1,28 @@
+﻿@model introDotNetCoreWithMVC.Models.User
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>UserRegister</title>
+</head>
+<body>
+    <form method="post" action="/Home/UserRegister">
+        <p>
+            <input type="text" placeholder="Ad" id="name" name="name" value="" />
+        </p>
+        <p>
+            <input type="text" placeholder="Soyad" id="surname" name="surname" value="" />
+        </p>
+        <p>
+            <input type="email" placeholder="Eposta" id="email" name="email" value="" />
+        </p>
+        <button type="submit">Ekle</button>
+    </form>
+</body>
+</html>
