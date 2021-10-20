@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using introDotNetCoreWithMVC.Models;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,5 +25,18 @@ namespace introDotNetCoreWithMVC.Controllers
         //{
         //    return "Burasi Home/Index tir.";
         //}
+
+        public IActionResult useModel()
+        {
+            List<Drink> drinks = new List<Drink>
+            {
+                new Drink { Name = "Su", Price = 1.5},
+                new Drink { Name = "Soda", Price = 3},
+                new Drink { Name = "Cola", Price = 7.5},
+                new Drink { Name = "Kahve", Price = 8}
+            };
+
+            return View(drinks);
+        }
     }
 }
