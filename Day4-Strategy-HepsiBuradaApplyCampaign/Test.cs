@@ -12,7 +12,7 @@ namespace Day4_Strategy_HepsiBuradaCalculatePrice
      */
     public class Test
     {
-        public void TestCampaigns(ICampaign campaign, ICoupon coupon)
+        public void TestCampaigns(List<Product> products, ICampaign campaign, ICoupon coupon)
         {
             Console.WriteLine("--------------------------------------------------");
 
@@ -21,13 +21,6 @@ namespace Day4_Strategy_HepsiBuradaCalculatePrice
 
             Console.WriteLine("Sepetteki Urunler");
             Console.WriteLine("--------------------------------------------------");
-
-            List<Product> products = new List<Product>();
-            products.Add(new Product { Name = "Kalem", Price = 12.50 });
-            products.Add(new Product { Name = "Silgi", Price = 4.90 });
-            products.Add(new Product { Name = "Kalemtiras", Price = 3.90 });
-            products.Add(new Product { Name = "Defter", Price = 5.50 });
-            products.Add(new Product { Name = "Okul Cantasi", Price = 259.90 });
 
             double discountedPrice = 0;
             double totalPrice = 0;

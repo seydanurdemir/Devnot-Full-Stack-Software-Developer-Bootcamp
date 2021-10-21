@@ -66,9 +66,9 @@ namespace Day4_Strategy_HepsiBuradaCalculatePrice
     }
 
     /**
-     * class HundredTL : Implements ICoupon interface.
+     * class TwoHundredTL : Implements ICoupon interface.
      */
-    public class HundredTL : ICoupon
+    public class TwoHundredTL : ICoupon
     {
         /**
          * double QUANTITY : Coupon quantity.
@@ -94,7 +94,7 @@ namespace Day4_Strategy_HepsiBuradaCalculatePrice
             }
             else
             {
-                Console.WriteLine("Kuponunuzu kullanabilmek icin kalan harcama tutari : " + (COUPON_BASE_LIMIT - discountedPrice));
+                Console.WriteLine("Kuponunuzu kullanabilmek icin kalan harcama tutari : " + String.Format("{0:0.00}", (COUPON_BASE_LIMIT - discountedPrice)));
                 return (discountedPrice);
             }
         }

@@ -1,5 +1,6 @@
 ﻿// Import used namespaces.
 using System;
+using System.Collections.Generic;
 
 /**
  * namespace Day4_Strategy_HepsiBuradaCalculatePrice : Covers exercise of fourth day.
@@ -17,10 +18,8 @@ namespace Day4_Strategy_HepsiBuradaCalculatePrice
          */
         static void Main(string[] args)
         {
-            Test testCampaigns = new Test();
-            ICampaign campaign = new BirthDay();
-            ICoupon coupon = new FiftyTL();
-            testCampaigns.TestCampaigns(campaign, coupon);
+            Driver driver = new Driver();
+            driver.Drive();
         }
     }
 }

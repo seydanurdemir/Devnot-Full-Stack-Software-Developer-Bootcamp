@@ -39,7 +39,7 @@ namespace Day4_Strategy_HepsiBuradaCalculatePrice
                 Console.WriteLine("*** Ücretsiz kargo icin kalan tutar " + String.Format("{0:0.00}", (CARGO_FREE_BASE_LIMIT - price)));
                 return (price + CARGO_FEE);
             }
-            else if ((price > CARGO_FREE_BASE_LIMIT) && (price < CARGO_FREE_TOP_LIMIT))
+            else if ((price >= CARGO_FREE_BASE_LIMIT) && (price <= CARGO_FREE_TOP_LIMIT))
             {
                 Console.WriteLine("Kargo Ucretlendirmesi : " + String.Format("{0:0.00}", 0));
                 Console.WriteLine("*** Kargo bedava");
