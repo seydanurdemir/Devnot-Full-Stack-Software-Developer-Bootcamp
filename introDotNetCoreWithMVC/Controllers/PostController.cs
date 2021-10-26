@@ -11,7 +11,7 @@ namespace introDotNetCoreWithMVC.Controllers
     {
         public IActionResult Index()
         {
-            var post = new Post { Title = "MVC Nedir?", Content = "Lorem ipsum dolor sit amet", Name = "Turkay Urkmez"};
+            var post = new Post { Title = "MVC Mimarisi Nedir?", Content = "Lorem ipsum dolor sit amet", Name = "Turkay Urkmez"};
             var comments = new List<Comment>
             {
                 new Comment { Name = "Tosun", Context = "Guzel paylasim." },

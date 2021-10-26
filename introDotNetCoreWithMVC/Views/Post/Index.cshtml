@@ -1,0 +1,26 @@
+﻿@model PostAndCommentsViewModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_Layout";
+}
+
+<h1>@Model.Post.Title</h1>
+<p>
+    @Model.Post.Content
+</p>
+<hr />
+<h3>Yorumlar</h3>
+<ul>
+    @foreach (var comment in Model.Comments)
+    {
+        <li>
+            <h4>@comment.Name</h4>
+            <p>@comment.Context</p>
+        </li>
+    }
+</ul>
+
+<form>
+
+</form>

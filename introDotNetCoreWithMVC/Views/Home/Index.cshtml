@@ -1,16 +1,8 @@
 ﻿
 @{
-    Layout = null;
+    Layout = "_Layout";
 }
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
     <p>Merhaba @ViewBag.Name</p>
 
     @if (ViewBag.IsRedPill)
@@ -31,5 +23,3 @@
         }
     </ul>
     <a href="/Home/useModel">Model ornegi</a>
-</body>
-</html>

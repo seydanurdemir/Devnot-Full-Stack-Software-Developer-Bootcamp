@@ -1,17 +1,9 @@
-﻿@model introDotNetCoreWithMVC.Models.User
+﻿@model User
 
 @{
-    Layout = null;
+    Layout = "_Layout";
 }
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>UserRegister</title>
-</head>
-<body>
     <form method="post" action="/Home/UserRegister">
         <p>
             <input type="text" placeholder="Ad" id="name" name="name" value="" />
@@ -24,5 +16,3 @@
         </p>
         <button type="submit">Ekle</button>
     </form>
-</body>
-</html>
