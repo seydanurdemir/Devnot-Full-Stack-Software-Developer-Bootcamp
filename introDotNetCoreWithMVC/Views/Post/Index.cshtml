@@ -15,12 +15,15 @@
     @foreach (var comment in Model.Comments)
     {
         <li>
-            <h4>@comment.Name</h4>
-            <p>@comment.Context</p>
+            @*<h4>@comment.Name</h4>
+            <p>@comment.Context</p>*@
+            <partial name="_Comment" model="comment"/>
         </li>
     }
 </ul>
 
-<form>
-
+<form asp-action="Index" asp-controller="Post">
+    <input placeholder="Adiniz" name="Name" />
+    <input placeholder="Yorumunuz" name="Context" />
+    <button type="submit">Gönder</button>
 </form>

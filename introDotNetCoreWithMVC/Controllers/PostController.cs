@@ -22,5 +22,12 @@ namespace introDotNetCoreWithMVC.Controllers
 
             return View(model);
         }
+
+        [HttpPost]
+
+        public IActionResult Index(Comment comment)
+        {
+            return View();
+        }
     }
 }
