@@ -1,10 +1,7 @@
 ﻿using introDotNetCoreWithMVC.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace introDotNetCoreWithMVC.Controllers
 {
@@ -51,9 +48,16 @@ namespace introDotNetCoreWithMVC.Controllers
 
         [HttpPost]
 
-        public IActionResult UserRegister(User user, IFormCollection formCollection)
+        //public IActionResult UserRegister(User user, IFormCollection formCollection)
+        //{
+        //    return View();
+        //}
+        public IActionResult UserRegister(User user)
         {
-
+            if (ModelState.IsValid)
+            {
+                // modelstate bu action a gonderilen parametrenin kurallara uyup uymadigini denetler
+            }
             return View();
         }
     }

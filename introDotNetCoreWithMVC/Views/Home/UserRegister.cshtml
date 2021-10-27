@@ -6,13 +6,16 @@
 
     <form method="post" action="/Home/UserRegister">
         <p>
-            <input type="text" placeholder="Ad" id="name" name="name" value="" />
+            <input placeholder="Ad" asp-for="Name" value="" />
+            <span asp-validation-for="Name"></span>
         </p>
         <p>
-            <input type="text" placeholder="Soyad" id="surname" name="surname" value="" />
+            <input placeholder="Soyad" asp-for="Surname" value="" />
+            <span asp-validation-for="Surname"></span>
         </p>
         <p>
-            <input type="email" placeholder="Eposta" id="email" name="email" value="" />
+            <input placeholder="Eposta" asp-for="Email" value="" />
+            <span asp-validation-for="Email"></span>
         </p>
         <button type="submit">Ekle</button>
     </form>
