@@ -10,7 +10,13 @@ namespace introAPI.Services
     {
         public IList<Restaurant> GetRestaurants()
         {
-            return new List<Restaurant>();
+            //return new List<Restaurant>();
+            return new List<Restaurant>
+                {
+                    new Restaurant { Id=1, Name="Kofteci Yusuf - Db"},
+                    new Restaurant { Id=2, Name="Mc Donalds - Db"},
+                    new Restaurant { Id=3, Name="Burger King - Db"},
+                };
         }
     }
 }

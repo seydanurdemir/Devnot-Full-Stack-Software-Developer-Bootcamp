@@ -1,3 +1,4 @@
+using introAPI.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -28,6 +29,13 @@ namespace introAPI
         {
 
             services.AddControllers();
+            //Type serviceType = null;
+            //services.AddSingleton(serviceType);
+            //services.AddScoped(serviceType);
+            //services.AddTransient(serviceType);
+            services.AddSingleton<IRestaurantService,RestaurantService>();
+            //services.AddScoped<IRestaurantService,RestaurantService>();
+            //services.AddTransient<IRestaurantService,RestaurantService>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "introAPI", Version = "v1" });

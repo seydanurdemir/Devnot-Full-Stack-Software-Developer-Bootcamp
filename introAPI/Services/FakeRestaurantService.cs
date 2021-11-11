@@ -18,7 +18,13 @@ namespace introAPI.Services
         //public IEnumerable<Restaurant> GetRestaurants()
         public IList<Restaurant> GetRestaurants()
         {
-            return restaurants;
+            //return restaurants;
+            return new List<Restaurant>
+                {
+                    new Restaurant { Id=1, Name="Kofteci Yusuf - Fake"},
+                    new Restaurant { Id=2, Name="Mc Donalds - Fake"},
+                    new Restaurant { Id=3, Name="Burger King - Fake"},
+                };
         }
     }
 }
