@@ -20,11 +20,15 @@ namespace introAPI.Controllers
                 new Restaurant{ Id=3, Name="Burger King"}
             };*/
 
-        FakeRestaurantService restaurantService = new FakeRestaurantService();
+        //FakeRestaurantService restaurantService = new FakeRestaurantService();
+        //FakeRestaurantService restaurantService;
+        IRestaurantService restaurantService;
 
-        public RestaurantsController()
+        //public RestaurantsController(FakeRestaurantService restaurantService)
+        public RestaurantsController(IRestaurantService restaurantService)
         {
-
+            //this.restaurantService = restaurantService;
+            this.restaurantService = restaurantService;
         }
 
         [HttpGet]

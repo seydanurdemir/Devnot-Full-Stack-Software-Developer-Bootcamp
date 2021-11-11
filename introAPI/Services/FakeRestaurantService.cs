@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace introAPI.Services
 {
-    public class FakeRestaurantService
+    public class FakeRestaurantService : IRestaurantService
     {
         private List<Restaurant> restaurants = new List<Restaurant>
         {
