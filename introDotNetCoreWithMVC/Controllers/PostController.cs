@@ -9,16 +9,25 @@ namespace introDotNetCoreWithMVC.Controllers
 {
     public class PostController : Controller
     {
-        public IActionResult Index()
-        {
-            var post = new Post { Title = "MVC Mimarisi Nedir?", Content = "Lorem ipsum dolor sit amet", Name = "Turkay Urkmez"};
-            var comments = new List<Comment>
+        static Post post = new Post { Title = "MVC Mimarisi Nedir?", Content = "Lorem ipsum dolor sit amet", Name = "Turkay Urkmez" };
+        static List<Comment> comments = new List<Comment>
             {
                 new Comment { Name = "Tosun", Context = "Guzel paylasim." },
                 new Comment { Name = "Melih", Context = "Ayni viewde birden fazla islem nasil gosteririm" }
             };
 
-            var model = new PostAndCommentsViewModel { Post = post, Comments = comments };
+        PostAndCommentsViewModel model = new PostAndCommentsViewModel { Post = post, Comments = comments };
+
+        public IActionResult Index()
+        {
+            //var post = new Post { Title = "MVC Mimarisi Nedir?", Content = "Lorem ipsum dolor sit amet", Name = "Turkay Urkmez"};
+            //var comments = new List<Comment>
+            //{
+            //    new Comment { Name = "Tosun", Context = "Guzel paylasim." },
+            //    new Comment { Name = "Melih", Context = "Ayni viewde birden fazla islem nasil gosteririm" }
+            //};
+
+            //var model = new PostAndCommentsViewModel { Post = post, Comments = comments };
 
             return View(model);
         }
@@ -27,7 +36,8 @@ namespace introDotNetCoreWithMVC.Controllers
 
         public IActionResult Index(Comment comment)
         {
-            return View();
+            comments.Add(comment);
+            return View(model);
         }
     }
 }
