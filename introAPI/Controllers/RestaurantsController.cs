@@ -1,4 +1,5 @@
 ﻿using introAPI.Models;
+using introAPI.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -12,22 +13,32 @@ namespace introAPI.Controllers
     [ApiController]
     public class RestaurantsController : ControllerBase
     {
-        private List<Restaurant> restaurants = new List<Restaurant>
+        /*private List<Restaurant> restaurants = new List<Restaurant>
             {
                 new Restaurant{ Id=1, Name="Kofteci Yusuf"},
                 new Restaurant{ Id=2, Name="Mc Donalds"},
                 new Restaurant{ Id=3, Name="Burger King"}
-            };
+            };*/
+
+        FakeRestaurantService restaurantService = new FakeRestaurantService();
+
+        public RestaurantsController()
+        {
+
+        }
 
         [HttpGet]
         public IActionResult GetRestaurants()
         {
+            /*FakeRestaurantService restaurantService = new FakeRestaurantService();*/
+            var restaurants = restaurantService.GetRestaurants();
             return Ok(restaurants);
         }
 
         [HttpGet("{id}")]
         public IActionResult GetRestaurant(int id)
         {
+            var restaurants = restaurantService.GetRestaurants();
             var restaurant = restaurants.FirstOrDefault(r => r.Id == id);
             if (restaurant != null)
             {
@@ -46,6 +57,7 @@ namespace introAPI.Controllers
         [HttpPost]
         public IActionResult AddRestaurant([FromBody]Restaurant restaurant)
         {
+            var restaurants = restaurantService.GetRestaurants();
             if (ModelState.IsValid)
             {
                 restaurants.Add(restaurant);
