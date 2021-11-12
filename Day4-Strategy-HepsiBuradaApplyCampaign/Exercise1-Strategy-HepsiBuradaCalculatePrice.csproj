@@ -3,7 +3,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
-    <RootNamespace>Day4_Strategy_HepsiBuradaCalculatePrice</RootNamespace>
+    <RootNamespace>Exercise1_Strategy_HepsiBuradaCalculatePrice</RootNamespace>
   </PropertyGroup>
 
 </Project>

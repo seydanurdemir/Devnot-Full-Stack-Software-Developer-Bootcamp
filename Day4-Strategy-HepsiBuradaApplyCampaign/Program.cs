@@ -3,9 +3,9 @@ using System;
 using System.Collections.Generic;
 
 /**
- * namespace Day4_Strategy_HepsiBuradaCalculatePrice : Covers exercise of fourth day.
+ * namespace Exercise1_Strategy_HepsiBuradaCalculatePrice : Covers exercise of fourth day.
  */
-namespace Day4_Strategy_HepsiBuradaCalculatePrice
+namespace Exercise1_Strategy_HepsiBuradaCalculatePrice
 {
     /**
      * class Program : Implements driver method of the project.
