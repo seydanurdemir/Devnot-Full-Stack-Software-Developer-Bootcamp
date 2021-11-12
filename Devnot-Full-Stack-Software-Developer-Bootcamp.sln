@@ -71,6 +71,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "introAPI", "introAPI\introA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LifeCycleOfDependencyInjection", "LifeCycleOfDependencyInjection\LifeCycleOfDependencyInjection.csproj", "{4F698AFF-1DDC-4308-94E0-A3981E3EE7B5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "customMiddleware", "customMiddleware\customMiddleware.csproj", "{59E6DDCE-7883-4F99-A53F-31FA6225BF8D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -165,6 +167,10 @@ Global
 		{4F698AFF-1DDC-4308-94E0-A3981E3EE7B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4F698AFF-1DDC-4308-94E0-A3981E3EE7B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4F698AFF-1DDC-4308-94E0-A3981E3EE7B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59E6DDCE-7883-4F99-A53F-31FA6225BF8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59E6DDCE-7883-4F99-A53F-31FA6225BF8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59E6DDCE-7883-4F99-A53F-31FA6225BF8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59E6DDCE-7883-4F99-A53F-31FA6225BF8D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -199,6 +205,7 @@ Global
 		{1E9A205E-C59D-43F9-A0D6-53D6B8FBCBC2} = {37D91CEA-015F-4D92-9605-B4767699ED4D}
 		{10892262-C0A8-44BF-A1B3-35FF98F4B766} = {2DCD44FD-1F41-4B76-AFEA-DA0E2CB7EE1F}
 		{4F698AFF-1DDC-4308-94E0-A3981E3EE7B5} = {1D275609-7C55-48F8-9FCB-EA2EED8D8DA5}
+		{59E6DDCE-7883-4F99-A53F-31FA6225BF8D} = {1D275609-7C55-48F8-9FCB-EA2EED8D8DA5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {13B29E22-DA25-4E78-8B0F-01ACE633B1C2}
