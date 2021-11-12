@@ -1,0 +1,25 @@
+﻿Week1
+	Day4
+		Exercise2
+			MediumPost
+				Write a medium post about exercise 1. 
+				Tell what you did on last exercise. 
+
+In Turkish : Turkce devam ediyorum.
+
+Ben kimim?
+Nasıl içerikler üretiyorum?
+Mediumda ne yapıyorum?
+Devnot nedir, fullstack nedir, software nedir, developer nedir, bootcamp nedir?
+Devnot fullstack software developer bootcamp nedir?
+Bu bootcampin süreçleri nasıl ilerledi?
+
+# Design Patterns, Strategy Design Pattern, Applying Campaign Solution
+
+# Design Patterns
+	1. Creational Patterns
+	2. Structural Patterns
+	3. Behavioral Patterns
+		- Strategy : applying campaign problem, and solution with using strategy design pattern.
+
+# My project and files, interfaces classes methods and main method.
