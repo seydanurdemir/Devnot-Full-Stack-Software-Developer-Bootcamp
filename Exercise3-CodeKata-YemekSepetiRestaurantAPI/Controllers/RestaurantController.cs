@@ -19,7 +19,7 @@ namespace Exercise3_CodeKata_YemekSepetiRestaurantAPI.Controllers
             new Restaurant { Id = 2, Name = "Oses Cig Kofte", City = "Kocaeli", Region = "Darica-Zincirlikuyu-Mah", MinDelivery = 20.00, DeliveryTimeMin = 20, DeliveryTimeMax = 30, IsDeleted = false }
          };
 
-        [HttpGet("All")]
+        [HttpGet]
 
         public IActionResult GetRestaurants()
         {
@@ -38,7 +38,7 @@ namespace Exercise3_CodeKata_YemekSepetiRestaurantAPI.Controllers
             return Ok(new { Message = "There is no any restaurant." });
         }
 
-        [HttpGet("Id/{id}")]
+        [HttpGet("{id}")]
 
         public IActionResult GetRestaurantById(int id)
         {
@@ -92,7 +92,7 @@ namespace Exercise3_CodeKata_YemekSepetiRestaurantAPI.Controllers
             return BadRequest(new { Message = "There is no any restaurant in this region." });
         }
 
-        [HttpPost("Add")]
+        [HttpPost]
 
         public IActionResult AddRestaurant([FromBody]Restaurant restaurant)
         {
@@ -105,7 +105,7 @@ namespace Exercise3_CodeKata_YemekSepetiRestaurantAPI.Controllers
             }
             return BadRequest(new { Message = "Invalid entry." });
         }
-        
+
         [HttpPut("{id}")]
 
         public IActionResult EditRestaurant(int id, Restaurant restaurant)
