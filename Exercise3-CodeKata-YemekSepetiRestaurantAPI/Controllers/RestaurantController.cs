@@ -75,5 +75,54 @@ namespace Exercise3_CodeKata_YemekSepetiRestaurantAPI.Controllers
             }
             return BadRequest(new { Message = "There is no any restaurant in this region." });
         }
+
+        [HttpPost("Add")]
+
+        public IActionResult AddRestaurant([FromBody]Restaurant restaurant)
+        {
+            if (ModelState.IsValid)
+            {
+                restaurant.Id = restaurants.Count;
+                restaurants.Add(restaurant);
+                return Ok(restaurant);
+                //return Ok(ModelState);
+                //return CreatedAtAction(nameof(GetRestaurant), new { id = restaurant.Id }, null);
+            }
+            return BadRequest(new { Message = "Invalid entry." });
+            //return BadRequest(ModelState);
+        }
+        
+        [HttpPost("Edit")]
+
+        public IActionResult EditRestaurant(Restaurant restaurant)
+        {
+            if (ModelState.IsValid)
+            {
+                int index = -1;
+                int i = 0;
+                foreach(Restaurant res in restaurants)
+                {
+                    if ((res.Name == restaurant.Name) && (res.City == restaurant.City) && (res.Region == restaurant.Region))
+                    {
+                        index = i;
+                        break;
+                    }
+                    i++;
+                }
+                if (index != -1)
+                {
+                    restaurants[index].Name = restaurant.Name;
+                    restaurants[index].City = restaurant.City;
+                    restaurants[index].Region = restaurant.Region;
+                    restaurants[index].MinDelivery = restaurant.MinDelivery;
+                    restaurants[index].DeliveryTimeMin = restaurant.DeliveryTimeMin;
+                    restaurants[index].DeliveryTimeMax = restaurant.DeliveryTimeMax;
+                    return Ok(restaurant);
+                }
+                
+            }
+            return BadRequest(new { Message = "Invalid entry." });
+            //return BadRequest(ModelState);
+        }
     }
 }
