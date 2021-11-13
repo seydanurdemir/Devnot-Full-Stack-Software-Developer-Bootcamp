@@ -14,28 +14,44 @@ namespace Exercise3_CodeKata_YemekSepetiRestaurantAPI.Controllers
     {
         private List<Restaurant> restaurants = new List<Restaurant>
         {
-            new Restaurant { Id = 0, Name = "Pizza Bulls", City = "Istanbul", Region = "Tuzla-Icmeler-Mah", MinDelivery = 19.90, DeliveryTimeMin = 30, DeliveryTimeMax = 40 },
-            new Restaurant { Id = 1, Name = "Little Caesars Pizza", City = "Kocaeli", Region = "Darica-Baglarbasi-Mah", MinDelivery = 24.90, DeliveryTimeMin = 20, DeliveryTimeMax = 30 },
-            new Restaurant { Id = 2, Name = "Oses Cig Kofte", City = "Kocaeli", Region = "Darica-Zincirlikuyu-Mah", MinDelivery = 20.00, DeliveryTimeMin = 20, DeliveryTimeMax = 30 }
+            new Restaurant { Id = 0, Name = "Pizza Bulls", City = "Istanbul", Region = "Tuzla-Icmeler-Mah", MinDelivery = 19.90, DeliveryTimeMin = 30, DeliveryTimeMax = 40, IsDeleted = false },
+            new Restaurant { Id = 1, Name = "Little Caesars Pizza", City = "Kocaeli", Region = "Darica-Baglarbasi-Mah", MinDelivery = 24.90, DeliveryTimeMin = 20, DeliveryTimeMax = 30, IsDeleted = true },
+            new Restaurant { Id = 2, Name = "Oses Cig Kofte", City = "Kocaeli", Region = "Darica-Zincirlikuyu-Mah", MinDelivery = 20.00, DeliveryTimeMin = 20, DeliveryTimeMax = 30, IsDeleted = false }
          };
 
         [HttpGet("All")]
 
         public IActionResult GetRestaurants()
         {
-            return Ok(restaurants);
+            List<Restaurant> newRestaurants = new List<Restaurant>();
+            foreach (Restaurant restaurant in restaurants)
+            {
+                if (restaurant.IsDeleted == false)
+                {
+                    newRestaurants.Add(restaurant);
+                }
+            }
+            if (newRestaurants.Count > 0)
+            {
+                return Ok(newRestaurants);
+            }
+            return Ok(new { Message = "There is no any restaurant." });
         }
 
         [HttpGet("Id/{id}")]
 
         public IActionResult GetRestaurantById(int id)
         {
-            Restaurant restaurant = restaurants.FirstOrDefault(r => r.Id == id);
-            if (restaurant != null)
+            int index = restaurants.IndexOf(restaurants.FirstOrDefault(r => r.Id == id));
+            if (index != -1)
             {
-                return Ok(restaurant);
+                if (restaurants[index].IsDeleted == false)
+                {
+                    return Ok(restaurants[id]);
+                }
+                return BadRequest(new { Message = "There is no any restaurant by this id." });
             }
-            return BadRequest(new { Message = "There is no any restaurant by this id."});
+            return BadRequest(new { Message = "There is no any restaurant by this id." });
         }
 
         [HttpGet("City/{city}")]
@@ -45,7 +61,7 @@ namespace Exercise3_CodeKata_YemekSepetiRestaurantAPI.Controllers
             List<Restaurant> newRestaurantsByCity = new List<Restaurant>();
             foreach(Restaurant restaurant in restaurants)
             {
-                if (restaurant.City == city)
+                if ((restaurant.City == city) && (restaurant.IsDeleted == false))
                 {
                     newRestaurantsByCity.Add(restaurant);
                 }
@@ -64,7 +80,7 @@ namespace Exercise3_CodeKata_YemekSepetiRestaurantAPI.Controllers
             List<Restaurant> newRestaurantsByRegion = new List<Restaurant>();
             foreach (Restaurant restaurant in restaurants)
             {
-                if (restaurant.Region == region)
+                if ((restaurant.Region == region) && (restaurant.IsDeleted == false))
                 {
                     newRestaurantsByRegion.Add(restaurant);
                 }
@@ -82,47 +98,51 @@ namespace Exercise3_CodeKata_YemekSepetiRestaurantAPI.Controllers
         {
             if (ModelState.IsValid)
             {
-                restaurant.Id = restaurants.Count;
+                var newId = restaurants[restaurants.Count - 1].Id + 1;
+                restaurant.Id = newId;
                 restaurants.Add(restaurant);
                 return Ok(restaurant);
-                //return Ok(ModelState);
-                //return CreatedAtAction(nameof(GetRestaurant), new { id = restaurant.Id }, null);
             }
             return BadRequest(new { Message = "Invalid entry." });
-            //return BadRequest(ModelState);
         }
         
-        [HttpPost("Edit")]
+        [HttpPut("{id}")]
 
-        public IActionResult EditRestaurant(Restaurant restaurant)
+        public IActionResult EditRestaurant(int id, Restaurant restaurant)
         {
             if (ModelState.IsValid)
             {
-                int index = -1;
-                int i = 0;
-                foreach(Restaurant res in restaurants)
-                {
-                    if ((res.Name == restaurant.Name) && (res.City == restaurant.City) && (res.Region == restaurant.Region))
-                    {
-                        index = i;
-                        break;
-                    }
-                    i++;
-                }
+                int index = restaurants.IndexOf(restaurants.FirstOrDefault(r => r.Id == id));
                 if (index != -1)
                 {
-                    restaurants[index].Name = restaurant.Name;
-                    restaurants[index].City = restaurant.City;
-                    restaurants[index].Region = restaurant.Region;
-                    restaurants[index].MinDelivery = restaurant.MinDelivery;
-                    restaurants[index].DeliveryTimeMin = restaurant.DeliveryTimeMin;
-                    restaurants[index].DeliveryTimeMax = restaurant.DeliveryTimeMax;
-                    return Ok(restaurant);
+                    if (restaurant.Name != null) restaurants[index].Name = restaurant.Name;
+                    if (restaurant.City != null) restaurants[index].City = restaurant.City;
+                    if (restaurant.Region != null) restaurants[index].Region = restaurant.Region;
+                    if (restaurant.Speed != null) restaurants[index].Speed = restaurant.Speed;
+                    if (restaurant.Service != null) restaurants[index].Service = restaurant.Service;
+                    if (restaurant.Flavour != null) restaurants[index].Flavour = restaurant.Flavour;
+                    if (restaurant.MinDelivery != null) restaurants[index].MinDelivery = restaurant.MinDelivery;
+                    if (restaurant.DeliveryTimeMin != null) restaurants[index].DeliveryTimeMin = restaurant.DeliveryTimeMin;
+                    if (restaurant.DeliveryTimeMax != null) restaurants[index].DeliveryTimeMax = restaurant.DeliveryTimeMax;
+                    if (restaurant.IsDeleted != null) restaurants[index].IsDeleted = restaurant.IsDeleted;
+                    return Ok(restaurants[index]);
                 }
-                
+                return BadRequest(new { Message = "There is no any restaurant by this id." });
             }
             return BadRequest(new { Message = "Invalid entry." });
-            //return BadRequest(ModelState);
+        }
+
+        [HttpDelete("{id}")]
+
+        public IActionResult RemoveRestaurant(int id)
+        {
+            int index = restaurants.IndexOf(restaurants.FirstOrDefault(r => r.Id == id));
+            if (index != -1)
+            {
+                restaurants[index].IsDeleted = true;
+                return Ok(restaurants[index]);
+            }
+            return BadRequest(new { Message = "There is no any restaurant by this id." });
         }
     }
 }
