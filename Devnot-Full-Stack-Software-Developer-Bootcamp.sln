@@ -75,7 +75,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Week1", "Week1", "{D05BDAB4
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Day4", "Day4", "{629B91FD-34A5-44CB-B0D3-0526D58AE623}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercise1-Strategy-HepsiBuradaApplyCampaign", "Exercise1-Strategy-HepsiBuradaApplyCampaign\Exercise1-Strategy-HepsiBuradaApplyCampaign.csproj", "{569D94AB-2E7D-4698-B509-8E918B1EA782}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exercise1-Strategy-HepsiBuradaApplyCampaign", "Exercise1-Strategy-HepsiBuradaApplyCampaign\Exercise1-Strategy-HepsiBuradaApplyCampaign.csproj", "{569D94AB-2E7D-4698-B509-8E918B1EA782}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Week2", "Week2", "{15BDE9E8-093A-4D14-98D7-8B401AAC7E4A}"
 EndProject
@@ -83,9 +83,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercise2-MediumPost", "Exe
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Day3", "Day3", "{03A51D62-82C8-4317-BD33-A05934DE5185}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercise3-CodeKata-YemekSepetiRestaurantAPI", "Exercise3-CodeKata-YemekSepetiRestaurantAPI\Exercise3-CodeKata-YemekSepetiRestaurantAPI.csproj", "{759E1574-F53B-4B42-8C02-B7001AFAA425}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exercise3-CodeKata-YemekSepetiRestaurantAPI", "Exercise3-CodeKata-YemekSepetiRestaurantAPI\Exercise3-CodeKata-YemekSepetiRestaurantAPI.csproj", "{759E1574-F53B-4B42-8C02-B7001AFAA425}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercise3_CodeKata_YemekSepetiRestaurantAPI2", "Exercise3_CodeKata_YemekSepetiRestaurantAPI2\Exercise3_CodeKata_YemekSepetiRestaurantAPI2.csproj", "{ACF6A91E-4804-4688-A850-1C80984C6862}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exercise3_CodeKata_YemekSepetiRestaurantAPI2", "Exercise3_CodeKata_YemekSepetiRestaurantAPI2\Exercise3_CodeKata_YemekSepetiRestaurantAPI2.csproj", "{ACF6A91E-4804-4688-A850-1C80984C6862}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercise3-CodeKata-YemekSepetiRestaurantAPI3", "Exercise3-CodeKata-YemekSepetiRestaurantAPI3\Exercise3-CodeKata-YemekSepetiRestaurantAPI3.csproj", "{E6B623DA-4956-47B9-A2EE-C778742E69A5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -197,6 +199,10 @@ Global
 		{ACF6A91E-4804-4688-A850-1C80984C6862}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ACF6A91E-4804-4688-A850-1C80984C6862}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ACF6A91E-4804-4688-A850-1C80984C6862}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6B623DA-4956-47B9-A2EE-C778742E69A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6B623DA-4956-47B9-A2EE-C778742E69A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6B623DA-4956-47B9-A2EE-C778742E69A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6B623DA-4956-47B9-A2EE-C778742E69A5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -239,6 +245,7 @@ Global
 		{03A51D62-82C8-4317-BD33-A05934DE5185} = {15BDE9E8-093A-4D14-98D7-8B401AAC7E4A}
 		{759E1574-F53B-4B42-8C02-B7001AFAA425} = {03A51D62-82C8-4317-BD33-A05934DE5185}
 		{ACF6A91E-4804-4688-A850-1C80984C6862} = {03A51D62-82C8-4317-BD33-A05934DE5185}
+		{E6B623DA-4956-47B9-A2EE-C778742E69A5} = {03A51D62-82C8-4317-BD33-A05934DE5185}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {13B29E22-DA25-4E78-8B0F-01ACE633B1C2}
