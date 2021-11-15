@@ -1,11 +1,8 @@
 ﻿using Exercise3_CodeKata_YemekSepetiRestaurantAPI3.Models;
 using Exercise3_CodeKata_YemekSepetiRestaurantAPI3.Services.Abstract;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace Exercise3_CodeKata_YemekSepetiRestaurantAPI3.Controllers
 {
@@ -28,7 +25,7 @@ namespace Exercise3_CodeKata_YemekSepetiRestaurantAPI3.Controllers
             return Ok(restaurants);
         }
 
-        [HttpGet("{id}")] // Ok + data | NotFound + data
+        [HttpGet("{id}")] // Ok + data | NotFound + message | NotFound + message
 
         public IActionResult GetRestaurantById(int id)
         {
@@ -45,7 +42,7 @@ namespace Exercise3_CodeKata_YemekSepetiRestaurantAPI3.Controllers
             return NotFound(new { Message = "There is no any restaurant by this id." });
         }
 
-        [HttpGet("City/{city}")] // Ok + data | NotFound + data
+        [HttpGet("City/{city}")] // Ok + data | NotFound + message
 
         public IActionResult GetRestaurantsByCity(string city)
         {
@@ -65,7 +62,7 @@ namespace Exercise3_CodeKata_YemekSepetiRestaurantAPI3.Controllers
             return NotFound(new { Message = "There is no any restaurant in this city." });
         }
 
-        [HttpGet("Region/{region}")] // Ok + data | NotFound + data
+        [HttpGet("Region/{region}")] // Ok + data | NotFound + message
 
         public IActionResult GetRestaurantsByRegion(string region)
         {
@@ -100,11 +97,10 @@ namespace Exercise3_CodeKata_YemekSepetiRestaurantAPI3.Controllers
             return BadRequest(ModelState);
         }
 
-        [HttpPut("{id}")]
+        [HttpPut("{id}")] // Ok + data | NotFound + message | BadRequest + message
 
         public IActionResult EditRestaurant(int id, Restaurant restaurant)
         {
-            // Dependency Injection
             var restaurants = restaurantService.GetRestaurants();
             if (ModelState.IsValid)
             {
@@ -123,24 +119,23 @@ namespace Exercise3_CodeKata_YemekSepetiRestaurantAPI3.Controllers
                     if (restaurant.IsDeleted != null) restaurants[index].IsDeleted = restaurant.IsDeleted;
                     return Ok(restaurants[index]);
                 }
-                return BadRequest(new { Message = "There is no any restaurant by this id." });
+                return NotFound(new { Message = "There is no any restaurant by this id." });
             }
             return BadRequest(new { Message = "Invalid entry." });
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("{id}")] // Ok | NotFound + message
 
         public IActionResult RemoveRestaurant(int id)
         {
-            // Dependency Injection
             var restaurants = restaurantService.GetRestaurants();
             int index = restaurants.IndexOf(restaurants.FirstOrDefault(r => r.Id == id));
             if (index != -1)
             {
                 restaurants[index].IsDeleted = true;
-                return Ok(restaurants[index]);
+                return Ok();
             }
-            return BadRequest(new { Message = "There is no any restaurant by this id." });
+            return NotFound(new { Message = "There is no any restaurant by this id." });
         }
     }
 }

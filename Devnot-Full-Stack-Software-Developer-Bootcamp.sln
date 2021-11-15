@@ -85,7 +85,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Day3", "Day3", "{03A51D62-8
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exercise3-CodeKata-YemekSepetiRestaurantAPI", "Exercise3-CodeKata-YemekSepetiRestaurantAPI\Exercise3-CodeKata-YemekSepetiRestaurantAPI.csproj", "{759E1574-F53B-4B42-8C02-B7001AFAA425}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exercise3_CodeKata_YemekSepetiRestaurantAPI2", "Exercise3_CodeKata_YemekSepetiRestaurantAPI2\Exercise3_CodeKata_YemekSepetiRestaurantAPI2.csproj", "{ACF6A91E-4804-4688-A850-1C80984C6862}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exercise3-CodeKata-YemekSepetiRestaurantAPI2", "Exercise3_CodeKata_YemekSepetiRestaurantAPI2\Exercise3-CodeKata-YemekSepetiRestaurantAPI2.csproj", "{ACF6A91E-4804-4688-A850-1C80984C6862}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercise3-CodeKata-YemekSepetiRestaurantAPI3", "Exercise3-CodeKata-YemekSepetiRestaurantAPI3\Exercise3-CodeKata-YemekSepetiRestaurantAPI3.csproj", "{E6B623DA-4956-47B9-A2EE-C778742E69A5}"
 EndProject
